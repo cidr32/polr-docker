@@ -1,7 +1,7 @@
-# Forked from TrafeX/docker-php-nginx (https://github.com/TrafeX/docker-php-nginx/)
+# Forked from ajanvier/docker-polr (https://github.com/ajanvier/docker-polr)
 
 FROM alpine:latest
-LABEL Maintainer="Aurélien JANVIER <dev@ajanvier.fr>" \
+LABEL Maintainer="cidr32" \
       Description="Unofficial Docker image for Polr."
 
 # Environment variables
