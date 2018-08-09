@@ -1,9 +1,11 @@
 Docker Polr on Alpine Linux
 ==============================================
-![Docker Build Status](https://img.shields.io/docker/build/ajanvier/polr.svg)
-![Docker Image Size](https://img.shields.io/microbadger/image-size/ajanvier/polr.svg)
+![Docker Build Status](https://img.shields.io/docker/build/cidr32/polr-docker.svg)
+![Docker Image Size](https://img.shields.io/microbadger/image-size/cidr32/polr-docker.svg)
 
 A Docker image for [Polr](https://github.com/cydrobolt/polr).
+
+forked from ajanvier/docker-polr
 
 Usage
 -----
@@ -17,7 +19,7 @@ Start the Docker container:
         -e "APP_ADDRESS=example.com" \
         -e "ADMIN_USERNAME=admin" \
         -e "ADMIN_PASSWORD=admin" \
-        ajanvier/polr
+        cidr32/polr-docker
 
 Or use the example docker-compose.yml.
 
