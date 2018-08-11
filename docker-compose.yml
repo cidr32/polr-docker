@@ -2,10 +2,11 @@ version: '3.5'
 
 services:
     polr:
-        image: ajanvier/polr
+        image: cidr32/polr-docker
         container_name: polr
+        restart: always
         ports:
-            - "80:80"
+            - "8082:80"
         environment:
             - DB_HOST=${DB_HOST}
             - DB_DATABASE=${DB_DATABASE}
@@ -14,6 +15,20 @@ services:
             - ADMIN_USERNAME=${ADMIN_USERNAME}
             - ADMIN_PASSWORD=${ADMIN_PASSWORD}
             - ADMIN_EMAIL=${ADMIN_EMAIL}
+            - APP_ADDRESS=${APP_ADDRESS}
+            - APP_NAME=${APP_NAME}
+            - MAIL_HOST=${MAIL_HOST}
+            - MAIL_PORT=${MAIL_PORT}
+            - MAIL_FROM_ADDRESS=${MAIL_FROM_ADDRESS}
+            - MAIL_FROM_NAME=${MAIL_FROM_NAME}
+            - SETTING_SHORTEN_PERMISSION=${SETTING_SHORTEN_PERMISSION}
+            - SETTING_PASSWORD_RECOV=${SETTING_PASSWORD_RECOV}
+            - SETTING_PSEUDORANDOM_ENDING=${SETTING_PSEUDORANDOM_ENDING}
+            - SETTING_ADV_ANALYTICS=${SETTING_ADV_ANALYTICS}
+            - SETTING_RESTRICT_EMAIL_DOMAIN=${SETTING_RESTRICT_EMAIL_DOMAIN}
+            - SETTING_ALLOWED_EMAIL_DOMAINS=${SETTING_ALLOWED_EMAIL_DOMAINS}
+            - POLR_ALLOW_ACCT_CREATION=${POLR_ALLOW_ACCT_CREATION}
+            - POLR_ACCT_ACTIVATION=${POLR_ACCT_ACTIVATION}
         depends_on:
             - mariadb
 
@@ -29,4 +44,4 @@ services:
           - MYSQL_USER=${DB_USERNAME}
           - MYSQL_PASSWORD=${DB_PASSWORD}
         volumes:
-          - /var/lib/mysql
+          - ./db-data:/var/lib/mysql
