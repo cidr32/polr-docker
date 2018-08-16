@@ -1,0 +1,16 @@
+*
+!config/*
+!seeders/*
+!.env
+!Dockerfile
+!README.md
+!docker-compose.yml
+!start.sh
+
+!config/.env_polr
+!config/fpm-pool.conf
+!config/nginx.conf
+!config/php.ini
+!config/supervisord.conf
+
+!seeders/AdminSeeder.php
